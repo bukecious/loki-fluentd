@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: random-logger
+  name: logger
   labels:
-    app: random-logger
+    app: logger
 spec:
   replicas: 50
   selector:
     matchLabels:
-      app: random-logger
+      app: logger
   template:
     metadata:
       labels:
-        app: random-logger
+        app: logger
     spec:
       containers:
-      - name: random-logger
+      - name: logger
         image: chentex/random-logger
-        # ports:
-        # - containerPort: 8080
